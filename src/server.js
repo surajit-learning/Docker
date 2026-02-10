@@ -1,8 +1,16 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var path = require('path');
+var fs = require('fs');
+var app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname,"index.html"));
+});
+
+app.get('/profilePicture', function(req, res){
+  var img = fs.readFileSync('');
+  res.writeHead(200, {'Content-Type':'image/jpg'});
+  res.end(img, 'binary');
 });
 
 app.listen(3000, function() {

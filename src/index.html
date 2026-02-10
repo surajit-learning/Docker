@@ -1,0 +1,53 @@
+<html>
+
+<script>
+    function editProfile(){
+       document.querySelector('.view').style.display='none'
+       document.querySelector('.edit').style.display='block'
+
+       const name= document.querySelector('#name').textContent
+       document.querySelector('#inputName').value=name
+
+       const job= document.querySelector('.job').
+       document.querySelector('#inputJob').value=job
+
+       const email= document.querySelector('.email').
+       document.querySelector('#inputEmail').value=email
+    }
+
+    function saveProfile (){
+        document.querySelector('#name').textContent = document.querySelector('#inputName').value
+        document.querySelector('#job').textContent = document.querySelector('#inputJob').value
+        document.querySelector('#email').textContent = document.querySelector('#inputEmail').value
+
+        document.querySelector('.view').style.display='block'
+        document.querySelector('.edit').style.display='none'
+
+    }
+
+</script>
+
+    <body>
+        <div class="view">
+            <h1 id="header" > User Profile</h1>
+            <img src="profilePicture">
+            Name: <h3 id="name">Surajit</h3>
+            <hr></hr>
+            Job: <h3 id="job">Architect</h3>
+            <hr></hr>
+            Email: <h3 id="email">Surajit@gmail.com</h3>
+            <hr></hr>
+        </div>
+        <div class="edit">
+            <h1 id="header" > User Profile</h1>
+            <img src="">
+            Name: <h3 id="inputName" type='text'></h3>
+            <hr></hr>
+            Job: <h3 id="inputJob" type='text'></h3>
+            <hr></hr>
+            Email: <h3 id="inputEmail" type='email'></h3>
+            <hr></hr>
+            <button id="editProfile" class="button" onclick="editProfile()">Edit Profile</button>
+        </div>
+    </body>
+</html>
